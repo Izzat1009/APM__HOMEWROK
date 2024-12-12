@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    margin: 0 auto;
+    padding: 0 16px;
+    max-width: 1540px;
+}
+h3{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+p{
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    color: #a00d0d;
+    font-style: normal;
+    font-size: 16px; 
+}
+.wrapper{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 12px;
+    flex-wrap: wrap;
+    background: #ddd;
+}
+.loading{
+    display: grid;
+    background: #fff;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 50px;
+    grid-gap: 12px;
+}
+.lds-ellipsis{
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 10px;
+}
+.loading__image{
+    width: 100%;
+    border-radius: 10px;
+    height: 250px;
+    background: #fff;
+}
+.loading__title{
+    background: #fff;
+    width: 80%;
+    height: 30px;
+    margin-top: 12px;
+}
+.loading__title:last-child{
+    width: 60%;
+}
+.to-left{
+    background: linear-gradient(90deg, #ddd #aaa #ddd);
+    background-size: 200%;
+    animation: toLeft 1s linear  infinite;
+}
+@keyframes tolLeft {
+    to{
+        background-position: 200%;
+    }
+    
+}
+.card{
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 10px;
+    background: #fff;
+    
+}
+.card img{
+    background-color: #853e3e;
+    border-radius: 10px;
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+button{
+    margin-top: 5px;
+    height: 50px;
+    border-radius: 5px;
+    color: #fff;
+    width: 150px;
+    cursor: pointer;
+    transition: .3s;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    border: none;
+
+    font-style: normal;
+    background-color: #a86d00;
+}
+button:hover{
+    background-color: #a00d0d;
+    transform: scale(1.04);
+}
