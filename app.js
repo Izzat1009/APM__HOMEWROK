@@ -1,5 +1,6 @@
-const wrapperEl = document.querySelector(".wrapper")
-const loadingEl = document.querySelector(".loading")
+document.addEventListener("DOMContentLoaded", () =>{
+const wrapperEl = document.querySelector(".wrapper");
+const loadingEl = document.querySelector(".loading");
 const BASE_URL = "https://dummyjson.com"
 
 async function fetchData(endpoint){
@@ -14,20 +15,25 @@ async function fetchData(endpoint){
 }
 
 window.addEventListener("load", ()=>{
-    fetchData("/products")
+    fetchData("/users")
 })
 
 function createCard(data){
-    data.products.forEach(product=> {
+    data.users.forEach(user=> {
         const divEl = document.createElement("div")
         divEl.className = "card"
+
+
         divEl.innerHTML = `
-            <img src=${product.thumbnail} alt="rasm">
-            <h3>${product.title}</h3>
-            <p>${product.price} USD</p>
-            <button>Buy now</button>
+            <img src="${user.image}" alt="${user.firstName} ${user.lastName}">
+                    <h2>${user.firstName} ${user.lastName}</h2>
+                    <p><strong>Age:</strong> ${user.age}</p>
+                    <p><strong>Email:</strong> <a href="mailto:${user.email}">${user.email}</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:${user.phone}">${user.phone}</a></p>
         `
         wrapperEl.appendChild(divEl)    
     })
     
 }
+ fetchData("/users")
+})
